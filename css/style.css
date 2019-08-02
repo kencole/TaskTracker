@@ -1,0 +1,26 @@
+.create-form {
+  border: 3px solid #F06000;
+  border-radius: 25px;
+  padding: 8px 12px 18px 12px;
+  margin-bottom: 25px
+}
+
+.task {
+  border: 3px solid #F06000;
+  border-radius: 25px;
+  padding: 8px 12px 18px 12px;
+  margin-bottom: 25px
+}
+
+.row {
+  color: #000;
+  border: 3px solid #F06000;
+  border-radius: 25px;
+  padding: 8px 12px 18px 12px;
+  margin-bottom: 25px;
+}
+
+.completed {
+  color: #777;
+  text-decoration: line-through;
+}

@@ -2,28 +2,56 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>MY APP</title>
+  <title>TO-DOs</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 <body>
-  Create a New Task
-  <form action="/create" method="POST">
-  <input type="text" placeholder="name" name="name">
-  <input type="text" placeholder="description" name="description">
-  <button type="submit">Submit</button></form>
-
-  <ul class="tasks">
-  <% for(var i=0; i<tasks.length; i++) {%>
-    <li class="task">
-      <span><%= tasks[i].name %></span>
-      <span><%= tasks[i].description %></span>
-      <span><%= tasks[i]._id %></span>
-      <span>
-        <form method="DELETE" action=<%= "/delete/" + tasks[i]._id %>>
-          <button type="submit">Delete</button>
+  <h1>
+    <center>
+      Your To-Dos
+    </center>
+  </h1>
+  <div class="create-form">
+    <form action="/create" method="POST">
+      <div class="input-field inline">
+          <input id="last_name" type="text" name="name">
+          <label for="last_name">Task Name</label>
+      </div>
+      <div class="input-field inline">
+          <textarea id="textarea1" class="materialize-textarea" name='description'></textarea>
+          <label for="textarea1">Task Description</label>
+        </div>
+      <label for="completed">
+          <input id="completed" type="checkbox" class="filled-in" checked="checked" name="completed"/>
+          <span>Completed</span>
+      </label>
+      <button type="submit">Create</button>
+    </form>
+  </div>
+  <div class="tasks">
+    <% tasks = tasks.filter(task => !task.completed)
+          .concat(tasks.filter(task => task.completed));
+      for(var i=0; i<tasks.length; i++) {%>
+      <div class="<%= "row" + (tasks[i].completed ? " completed" : "") %>">
+        <form action=<%= "/delete/" + tasks[i]._id %>>
+          <span><%= tasks[i].number %></span>
+          <span><%= tasks[i].name %></span>
+          <span><%= tasks[i].description %></span>
+          <span>
+              <button type="submit">Delete</button>
+          </span>
         </form>
-      </span>
-    </li>
-  <% } %>
-  </ul>
+      </div>
+    <% } %>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
 </html>
