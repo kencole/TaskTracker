@@ -1,0 +1,26 @@
+{
+  "name": "tasktracker",
+  "version": "1.0.0",
+  "description": "Web app to keep track of things to do",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kencole/TaskTracker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kencole/TaskTracker/issues"
+  },
+  "homepage": "https://github.com/kencole/TaskTracker#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^2.6.2",
+    "express": "^4.17.1",
+    "expresss": "0.0.0",
+    "mongodb": "^3.3.0-beta2"
+  }
+}

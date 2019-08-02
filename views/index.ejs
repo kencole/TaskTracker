@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MY APP</title>
+</head>
+<body>
+  Create a New Task
+  <form action="/quotes" method="POST">
+  <input type="text" placeholder="name" name="name">
+  <input type="text" placeholder="description" name="description">
+  <button type="submit">Submit</button>
+
+  <ul class="tasks">
+  <% for(var i=0; i<tasks.length; i++) {%>
+    <li class="task">
+      <span><%= tasks[i].name %></span>
+      <span><%= tasks[i].description %></span>
+      <span><%= tasks[i]._id %></span>
+    </li>
+  <% } %>
+  </ul>
+</form>
+</body>
+</html>
