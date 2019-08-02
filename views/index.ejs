@@ -6,10 +6,10 @@
 </head>
 <body>
   Create a New Task
-  <form action="/quotes" method="POST">
+  <form action="/create" method="POST">
   <input type="text" placeholder="name" name="name">
   <input type="text" placeholder="description" name="description">
-  <button type="submit">Submit</button>
+  <button type="submit">Submit</button></form>
 
   <ul class="tasks">
   <% for(var i=0; i<tasks.length; i++) {%>
@@ -17,9 +17,13 @@
       <span><%= tasks[i].name %></span>
       <span><%= tasks[i].description %></span>
       <span><%= tasks[i]._id %></span>
+      <span>
+        <form method="DELETE" action=<%= "/delete/" + tasks[i]._id %>>
+          <button type="submit">Delete</button>
+        </form>
+      </span>
     </li>
   <% } %>
   </ul>
-</form>
 </body>
 </html>
