@@ -1,26 +1,33 @@
+.topnav {
+  background-color: #333;
+  overflow: hidden;
+}
+
+.topnav span {
+  float: left;
+  color: #fff;
+  text-align: center;
+  padding: 10px 10px;
+  text-decoration: none;
+  font-size: 13px;
+}
+
 .create-form {
-  border: 3px solid #F06000;
+  border: 3px solid #000000;
   border-radius: 25px;
   padding: 8px 12px 18px 12px;
   margin-bottom: 25px
 }
 
 .task {
-  border: 3px solid #F06000;
+  border: 3px solid #000000;
   border-radius: 25px;
   padding: 8px 12px 18px 12px;
   margin-bottom: 25px
 }
 
-.row {
-  color: #000;
-  border: 3px solid #F06000;
-  border-radius: 25px;
-  padding: 8px 12px 18px 12px;
-  margin-bottom: 25px;
-}
-
 .completed {
+  border: 3px solid #777;
   color: #777;
   text-decoration: line-through;
 }

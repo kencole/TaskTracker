@@ -6,7 +6,7 @@ const MongoClient = mongodb.MongoClient
 var db
 var taskCounter = 0
 
-const PORT_NUMBER = 3000
+const PORT_NUMBER = 8080
 const DB_NAME = 'tasks'
 const DB_URL = 'mongodb://127.0.0.1:27017'
 
@@ -44,11 +44,12 @@ app.get('/delete/:id', (req, res) => {
 })
 
 app.post('/create', (req, res) => {
-    console.log(req.body.completed);
+    console.log(req.body);
     var newTask = {
         name : req.body.name,
         description : req.body.description,
         completed : req.body.completed,
+        category : req.body.category,
         number : taskCounter++
     }
     db.collection(DB_NAME).insertOne(newTask, (err, result) => {
